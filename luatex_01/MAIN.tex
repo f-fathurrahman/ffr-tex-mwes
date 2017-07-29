@@ -1,0 +1,12 @@
+\documentclass{article}
+
+\newwrite\luadebug
+\immediate\openout\luadebug luadebug.lua
+\AtEndDocument{\immediate\closeout\luadebug}
+\newcommand\directluadebug{\immediate\write\luadebug}
+
+\begin{document}
+
+The standard approximation of $\pi = \directlua{tex.sprint(math.pi)}$.
+
+\end{document}
