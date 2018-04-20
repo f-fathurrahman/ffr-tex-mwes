@@ -1,0 +1,56 @@
+% Taken from (with modification)
+% https://tex.stackexchange.com/questions/101717/converting-markdown-to-latex-in-latex
+
+\documentclass{article}
+
+\usepackage{fancyvrb}
+\usepackage{minted}
+\usepackage{framed}
+
+\newenvironment{markdown}%
+    {\VerbatimEnvironment\begin{VerbatimOut}{tmp.markdown}}%
+    {\end{VerbatimOut}%
+        \immediate\write18{pandoc tmp.markdown -t latex -o tmp.tex}%
+        \input{tmp}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+\begin{document}
+
+\begin{markdown}
+# Section
+
+OK this is my markdown.
+
+*Italic*
+
+**Bold**
+
+A list:
+
+* Item
+* Another item
+
+A code `test`:
+
+```
+Test ...
+```
+ 
+Python code:
+```
+from __future__ import print_function
+print("Hello ffr")
+```
+\end{markdown}
+
+
+Another markdown:
+
+\begin{markdown}
+Test `again`
+\end{markdown}
+
+\end{document}
