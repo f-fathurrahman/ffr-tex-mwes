@@ -3,9 +3,11 @@
 
 \documentclass{article}
 
-\usepackage{fancyvrb}
-\usepackage{minted}
-\usepackage{framed}
+\input{preamble1}
+
+%\usepackage{fancyvrb}
+%\usepackage{minted}
+%\usepackage{framed}
 
 \newenvironment{markdown}%
     {\VerbatimEnvironment\begin{VerbatimOut}{tmp.markdown}}%
@@ -13,8 +15,8 @@
         \immediate\write18{pandoc tmp.markdown -t latex -o tmp.tex}%
         \input{tmp}}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+%\providecommand{\tightlist}{%
+%  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
 \begin{document}
@@ -40,10 +42,16 @@ Test ...
 ```
  
 Python code:
-```
+
+```python
 from __future__ import print_function
 print("Hello ffr")
+
+def myfunc1():
+    for i in range(5:10):
+        print("i = ", i)
 ```
+
 \end{markdown}
 
 
@@ -51,6 +59,32 @@ Another markdown:
 
 \begin{markdown}
 Test `again`
+
+Code in Julia:
+
+```julia
+function test()
+  @printf("Hello\n")
+  a = 2 + 3.1
+end
+```
+
+Code with unicode
+
+```julia
+mutable struct PWGrid
+    ecutwfc::Float64
+    ecutrho::Float64
+    Ns::Array{Int64}
+    LatVecs::Array{Float64,2}
+    RecVecs::Array{Float64,2}
+    Ω::Float64
+    r::Array{Float64,2}
+    gvec::GVectors
+    gkvec::GkVectors
+end
+```
+
 \end{markdown}
 
 \end{document}

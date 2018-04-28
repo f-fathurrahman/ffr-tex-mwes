@@ -1,1 +1,31 @@
 Test \texttt{again}
+
+Code in Julia:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{function}\NormalTok{ test()}
+\NormalTok{  @printf(}\StringTok{"Hello}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{  a = }\FloatTok{2}\NormalTok{ + }\FloatTok{3.1}
+\KeywordTok{end}
+\end{Highlighting}
+\end{Shaded}
+
+Code with unicode
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mutable struct PWGrid}
+\NormalTok{    ecutwfc::}\DataTypeTok{Float64}
+\NormalTok{    ecutrho::}\DataTypeTok{Float64}
+\NormalTok{    Ns::}\DataTypeTok{Array}\NormalTok{\{}\DataTypeTok{Int64}\NormalTok{\}}
+\NormalTok{    LatVecs::}\DataTypeTok{Array}\NormalTok{\{}\DataTypeTok{Float64}\NormalTok{,}\FloatTok{2}\NormalTok{\}}
+\NormalTok{    RecVecs::}\DataTypeTok{Array}\NormalTok{\{}\DataTypeTok{Float64}\NormalTok{,}\FloatTok{2}\NormalTok{\}}
+\NormalTok{    Ω::}\DataTypeTok{Float64}
+\NormalTok{    r::}\DataTypeTok{Array}\NormalTok{\{}\DataTypeTok{Float64}\NormalTok{,}\FloatTok{2}\NormalTok{\}}
+\NormalTok{    gvec::GVectors}
+\NormalTok{    gkvec::GkVectors}
+\KeywordTok{end}
+\end{Highlighting}
+\end{Shaded}
+
