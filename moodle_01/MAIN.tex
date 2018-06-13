@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\usepackage{moodle}
+
+\begin{document}
+
+\begin{quiz}{My first quiz}
+
+\begin{numerical}[points=2]{Basic addition}
+What is $8 + 4$?
+\item 12
+\end{numerical}
+
+\begin{shortanswer}[case sensitive=true]{Newton’s name}
+What was Newton’s first name?
+\item Isaac
+\item[fraction=0, feedback={No, silly!}] Fig
+\item{fraction=0} Sir
+\end{shortanswer}
+
+\begin{multi}[points=3]{A first derivative}
+What is the first derivative of $x^3$?
+\item $\frac{1}{4} x^4+C$
+\item* $3x^2$
+\item $51$
+\end{multi}
+
+\end{quiz}
+
+\end{document}
+

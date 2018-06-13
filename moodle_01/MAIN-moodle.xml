@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$module$/My first quiz</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name>
+    <text>Basic addition</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>What is \(8 + 4\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>2</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>12</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="shortanswer">
+  <name>
+    <text>Newton’s name</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>What was Newton’s first name? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <usecase>1</usecase>
+  <answer fraction="100" format="plain_text">
+    <text>Isaac </text>
+  </answer>
+  <answer fraction="0" format="plain_text">
+    <text> Fig </text>
+    <feedback format="html"><text><![CDATA[<p>No, silly!</p>]]></text></feedback>
+  </answer>
+  <answer fraction="100" format="plain_text">
+    <text>{fraction=0} Sir</text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name>
+    <text>A first derivative</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>What is the first derivative of \(x^3\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>3</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\frac {1}{4} x^4+C\)</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(3x^2\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(51\)</p>]]></text>
+  </answer>
+</question>
+ 
+</quiz>
