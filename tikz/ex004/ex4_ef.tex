@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\usepackage[gray]{xcolor}
+\usepackage{tikz,pgffor}
+\usetikzlibrary{shadows}
+
+\begin{document}
+
+\centering
+\begin{tikzpicture}
+
+\draw[help lines] (0,0) grid (10,10);
+
+\begin{scope}[yshift=-180,yslant=0.5,xslant=-1]
+  \filldraw[black!10,very thick] (0.5,1) rectangle (10,7);
+  \node[circle,circular glow,fill=red!20,draw=red,thick] 
+  at (4.1,4.9) {\phantom{perimetro}};
+\end{scope}
+
+\begin{scope}[rotate around = {-5:(0,0,0)}]
+
+  % medium cluster
+  \foreach \x in {6.75,7.25}
+    \shadedraw[ball color=yellow] (\x,2.5,13) circle (0.25cm);
+
+\end{scope}
+
+\end{tikzpicture}
+
+\end{document}
+
