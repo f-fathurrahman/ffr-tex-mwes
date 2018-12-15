@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\newcommand{\mymacro}[2]{
+This is mymacro with arg1 = \texttt{#1} and arg2 = \texttt{#2}.
+}
+
+\DeclareRobustCommand{\mymacroTwo}[2]{
+This is \texttt{\char`\\mymacroTwo} with arg1 = \texttt{#1} and arg2 = \texttt{#2}.
+}
+
+\begin{document}
+
+Example of \verb|mymacro|: \mymacro{Fadjar}{Fathurrahman}
+
+Example of \verb|mymacroTwo|: \mymacroTwo{Fadjar}{Fathurrahman}
+
+\end{document}
