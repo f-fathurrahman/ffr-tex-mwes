@@ -1,0 +1,36 @@
+\documentclass[border=0pt]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,height=6cm,compat=1.5}
+
+\begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[
+  title={\textbf{Sine wave}},
+  xlabel={This is $x$-label},
+  ylabel={This is $y$-label},
+  minor x tick num=1,
+  minor y tick num=3,
+]
+  \addplot[blue,mark=o,] table {sin.dat};
+  \addplot[red,mark=x,] table {cos.dat};
+\end{axis}
+\end{tikzpicture}
+%
+\hskip 10pt
+%
+\begin{tikzpicture}
+\begin{axis}[]
+  \newcommand\MU{0}
+  \newcommand\SIGMA{1e-3}
+  \addplot[
+    red,
+    domain=-3*\SIGMA:3*\SIGMA,
+  samples=201,]
+    {exp(-0.5*(x-\MU)^2/\SIGMA^2) / (\SIGMA*sqrt(2*pi))};
+\end{axis}
+\end{tikzpicture}
+
+
+\end{document}
