@@ -124,4 +124,47 @@ with \DeclareRobustCommand{\MyCommand}... in the preamble.
 This is especially true for macros which, when expanded, produce text
 that is written to a .aux file. 
 
+## New environments
+
+Just as with the \newcommand command, there is a command to create
+your own environments. The \newenvironment command uses the following syntax:
+
+```latex
+\newenvironment{name}[num][default]{before}{after}
+```
+
+Again \newenvironment can have an optional argument. When the \begin{name}
+command (which starts the environment) is encountered, the material specified
+in the `before` argument is processed before the text in the environment
+gets processed. The material in the after argument gets processed when
+the \end{name} command (which ends the environment) is encountered.
+
+The optional num and default arguments are used the same way as in
+the \newcommand command. LaTeX makes sure that you do not define an
+environment that already exists. If you ever want to change an existing
+environment, you can use the \renewenvironment command.
+It uses the same syntax as the \newenvironment command.
+
+The example below illustrates the usage of the \newenvironment command:
+
+```
+\newenvironment{king}
+{ \rule{1ex}{1ex}\hspace{\stretch{1}} }
+{ \hspace{\stretch{1}}\rule{1ex}{1ex} }
+```
+\begin{king}
+My humble subjects \ldots
+\end{king}
+
+Extra space
+
+When creating a new environment you may easily get bitten by extra spaces creeping
+in, which can potentially have fatal effects. One example is when you want to create
+a title environment which suppresses its own indentation as well as the one on
+the following paragraph. The \ignorespaces command in the begin block of the
+environment will make it ignore any space after executing the begin block.
+The end block is a bit more tricky as special processing occurs at the end
+of an environment. With the \ignorespacesafterend LaTeX will issue an
+\ignorespaces after the special `end` processing has occurred. 
+
 
