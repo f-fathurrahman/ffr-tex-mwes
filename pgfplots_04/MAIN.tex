@@ -1,0 +1,19 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=8cm,height=10cm,compat=1.8}
+\usepackage{pgfplotstable}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \begin{axis}
+  \addplot[mark=o] table {band_01.dat};
+  \addplot[mark=o] table {band_02.dat};
+  \addplot[mark=o] table {band_03.dat};
+  \addplot[mark=o] table {band_04.dat};
+  \addplot[mark=o] table {band_05.dat};
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}
