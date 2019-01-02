@@ -1,7 +1,7 @@
 \documentclass[border=10pt]{standalone}
 
 \usepackage{pgfplots}
-\pgfplotsset{width=8cm,height=10cm,compat=1.8}
+\pgfplotsset{width=14cm,height=12cm,compat=1.8}
 \usepackage{pgfplotstable}
 \pgfplotstableread{BANDS.dat}\mybands
 
@@ -9,11 +9,11 @@
 
 \begin{tikzpicture}
   \begin{axis}
-  \addplot[mark=o] table[x index = {0}, y index = {1}]{\mybands};
-  \addplot[mark=o] table[x index = {0}, y index = {2}]{\mybands};
-  \addplot[mark=o] table[x index = {0}, y index = {3}]{\mybands};
-  \addplot[mark=o] table[x index = {0}, y index = {4}]{\mybands};
-  \addplot[mark=o] table[x index = {0}, y index = {5}]{\mybands};
+  \addplot+[mark=o,every mark/.append style={solid, fill=gray}] table[x index = {0}, y index = {1}]{\mybands};
+  \addplot+[mark=o] table[x index = {0}, y index = {2}]{\mybands};
+  \addplot+[mark=o] table[x index = {0}, y index = {3}]{\mybands};
+  \addplot+[mark=o] table[x index = {0}, y index = {4}]{\mybands};
+  \addplot+[mark=o] table[x index = {0}, y index = {5}]{\mybands};
   \end{axis}
 \end{tikzpicture}
 
