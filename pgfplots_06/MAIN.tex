@@ -1,0 +1,25 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.13}
+
+\begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[
+  enlargelimits,
+  nodes near coords={(\coordindex)},
+  title=Single Triangle patch]
+  \addplot3 [patch] coordinates {
+    (0,0,1) (1,0,0) (1,1,0)
+  };
+  \addplot3 [patch] coordinates {
+    (0,0,1) (1,1,0) (1,1,1)
+  };
+  \addplot3 [patch] coordinates {
+    (0,0,1) (1,0,0) (-1,1,0)
+  };  
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
