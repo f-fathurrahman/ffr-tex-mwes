@@ -8,7 +8,17 @@
 \begin{document}
 
 \begin{tikzpicture}
-  \begin{axis}
+  \begin{axis}[
+    xtick={0.0000000000, 1.0471975512,
+           1.5707963268, 1.9410365716,
+           3.0517573062, 3.9586569883,
+           4.5999319034, 4.9701721482,
+           5.7106526379, 6.3519275530},
+    xticklabels={ $\Gamma$, X,
+                  W, K, $\Gamma$, L,
+                  U, W, L, K},
+    xmajorgrids,
+  ]
   \addplot+[mark=o,every mark/.append style={solid, fill=gray}] table[x index = {0}, y index = {1}]{\mybands};
   \addplot+[mark=o] table[x index = {0}, y index = {2}]{\mybands};
   \addplot+[mark=o] table[x index = {0}, y index = {3}]{\mybands};
