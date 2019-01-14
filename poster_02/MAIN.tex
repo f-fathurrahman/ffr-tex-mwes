@@ -1,0 +1,241 @@
+\documentclass[a0,landscape]{a0poster}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+%\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+
+\graphicspath{{images/}} % Location of the graphics files
+
+\usepackage{booktabs} % Top and bottom rules for table
+
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+
+\usepackage{url}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER 
+%----------------------------------------------------------------------------------------
+
+% The header is divided into three boxes:
+% The first is 55% wide and houses the title, subtitle, names and university/organization
+% The second is 25% wide and houses contact information
+% The third is 19% wide and houses a logo for your university/organization or a photo of you
+% The widths of these boxes can be easily edited to accommodate your content as you see fit
+
+\begin{minipage}[b]{0.65\linewidth}
+{\Huge \color{NavyBlue} \textbf{\texttt{PWDFT.jl}: A Julia package for electronic structure calculation \\
+using density functional theory and plane wave basis} \color{Black}}\\
+\huge \textbf{Fadjar Fathurrahman, Muhammad Kemal Agusta \& Hermawan Kresno Dipojono }\\ % Author(s)
+\huge Kelompok Keahlian Teknik Fisika Institut Teknologi Bandung \\ % University/organization
+\end{minipage}
+%
+\begin{minipage}[b]{0.25\linewidth}
+\color{DarkSlateGray}\Large \textbf{Contact Information:}\\
+Kelompok Keahlian Teknik Fisika \\ % Address
+Institut Teknologi Bandung \\
+Email: \texttt{fadjar@tf.itb.ac.id}\\ % Email address
+\end{minipage}
+%
+\begin{minipage}[b]{0.19\linewidth}
+\includegraphics[width=10cm]{ITB_logo.pdf} % Logo or a photo of you, adjust its dimensions here
+\end{minipage}
+
+\vspace{1cm} % A bit of extra whitespace between the header and poster content
+
+%----------------------------------------------------------------------------------------
+
+\begin{multicols}{3}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\color{Navy} % Navy color for the abstract
+
+\begin{minipage}[b]{1.0\linewidth}
+\Large
+
+{\centering \textbf{ABSTRACT} \par}
+
+We describe the implementation of \texttt{PWDFT.jl}, a package for electronic
+structure calculations written using Julia programming language using
+plane wave basis set and pseudopotentials.
+In this package, typical Kohn-Sham density functional theory (KSDFT) is divided into three
+steps: instantiation of an atomistic models, initialization of Kohn-Sham
+Hamiltonian, and self-consistent field (SCF) calculations.
+\texttt{PWDFT.jl} is allows user to write their own SCF or alternative methods
+by providing implementation several basic operations such as wave function
+orthogonalization, action of kinetic and potential operators
+to wave functions and iterative diagonalization
+of Hamiltonian. Because \texttt{PWDFT.jl} is implemented in Julia, matrix operations
+within which plane wave KSDFT are formulated, are particularly easy to be implemented
+as used.
+With these features\texttt{PWDFT.jl} is expected to be useful for for beginners KSDFT
+implementers and researchers who want to implement their new methods quickly.
+\texttt{PWDFT.jl} is freely available at
+\url{https:/github.com/f-fathurrahman/PWDFT.jl}.
+\end{minipage}
+
+
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\color{SaddleBrown} % SaddleBrown color for the introduction
+
+\section*{Introduction}
+
+Blah blah
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+
+\section*{Main Objectives}
+
+\begin{enumerate}
+\item Lorem ipsum dolor sit amet, consectetur.
+\item Nullam at mi nisl. Vestibulum est purus, ultricies cursus volutpat sit amet, vestibulum eu.
+\item Praesent tortor libero, vulputate quis elementum a, iaculis.
+\item Phasellus a quam mauris, non varius mauris. Fusce tristique, enim tempor varius porta, elit purus commodo velit, pretium mattis ligula nisl nec ante.
+\item Ut adipiscing accumsan sapien, sit amet pretium.
+\item Estibulum est purus, ultricies cursus volutpat
+\item Nullam at mi nisl. Vestibulum est purus, ultricies cursus volutpat sit amet, vestibulum eu.
+\item Praesent tortor libero, vulputate quis elementum a, iaculis.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+
+\section*{Materials and Methods}
+
+blah blah
+
+%------------------------------------------------
+
+\subsection*{Mathematical Section}
+
+blah blah
+
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 
+%----------------------------------------------------------------------------------------
+
+\section*{Results}
+
+Blah
+
+%
+\begin{wraptable}{l}{12cm} % Left or right alignment is specified in the first bracket, the width of the table is in the second
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{\color{Green} Table caption}
+\end{wraptable}
+%
+Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh.
+
+Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin.
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{\color{Green} Figure caption}
+\end{center}\vspace{1cm}
+
+In hac habitasse platea dictumst. Etiam placerat, risus ac.
+
+Adipiscing lectus in magna blandit:
+
+\begin{center}\vspace{1cm}
+\begin{tabular}{l l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2} \\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\captionof{table}{\color{Green} Table caption}
+\end{center}\vspace{1cm}
+
+Vivamus sed nibh ac metus tristique tristique a vitae ante. Sed lobortis mi ut arcu fringilla et adipiscing ligula rutrum. Aenean turpis velit, placerat eget tincidunt nec, ornare in nisl. In placerat.
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{\color{Green} Figure caption}
+\end{center}\vspace{1cm}
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+\color{SaddleBrown} % SaddleBrown color for the conclusions to make them stand out
+
+\section*{Conclusions}
+
+\begin{itemize}
+\item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
+\item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
+\item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
+\item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+\end{itemize}
+
+\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
+
+%----------------------------------------------------------------------------------------
+%	FORTHCOMING RESEARCH
+%----------------------------------------------------------------------------------------
+
+\section*{Forthcoming Research}
+
+Vivamus molestie, risus tempor vehicula mattis, libero arcu volutpat purus, sed blandit sem nibh eget turpis. Maecenas rutrum dui blandit lorem vulputate gravida. Praesent venenatis mi vel lorem tempor at varius diam sagittis. Nam eu leo id turpis interdum luctus a sed augue. Nam tellus.
+
+ %----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\nocite{*} % Print all references regardless of whether they were cited in the poster or not
+\bibliographystyle{plain} % Plain referencing style
+\bibliography{sample} % Use the example bibliography file sample.bib
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\section*{Acknowledgements}
+
+Etiam fermentum, arcu ut gravida fringilla, dolor arcu laoreet justo, ut imperdiet urna arcu a arcu. Donec nec ante a dui tempus consectetur. Cras nisi turpis, dapibus sit amet mattis sed, laoreet.
+
+%----------------------------------------------------------------------------------------
+
+\end{multicols}
+
+
+\end{document}
