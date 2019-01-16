@@ -1,0 +1,22 @@
+
+1. Latar Belakang
+
+1.1 Material Fungsional Maju
+
+Teknik Fisika (TF) merupakan bidang keilmuan teknik yang dicirikan dengan penekanan pada dasar sains rekayasa yang luas mencakup seluruh ranah fisis baik itu di ranah mekanika, termal, listrik \& magnet, optika, vibrasi \& akustika hingga ke ranah fenomena ilmu material dan isu mutakhir seperti nanoteknologi melalui perangkat teori mekanika kuantum dan fisika statistik. 
+
+Keluasan khazanah sains rekayasa tersebut menjadikan TF sebagai disiplin rekayasa yang berbeda dari disiplin teknik lain yang secara tradisional cenderung berangkat dari satu domain atau dua domain fisika. Hal ini berimplikasi pada dua hal: (1) TF memiliki karakteristik frontier dalam pengembangan keilmuan sebagai jembatan yang menghubungkan sains dasar dengan dunia rekayasa. (2) Keilmuan TF harus mampu berkembang secara lincah dalam mengeksplorasi kemungkinan-kemungkinan terbaru di dunia sains kerekayasaan. 
+
+Luasnya cakupan fenomena fisis yang digarap keilmuan Teknik Fisika tercermin salah satunya pada bidang garapan material fungsional maju. Secara definisi, material fungsional maju adalah material yang memiliki sifat asli yang memberikan suatu fungsi spesifik. Secara umum material fungsional maju dapat dikelompokkan berdasarkan sifat fisis yang difungsikan antara lain sebagai berikut :
+
+Material elektronik yang memanfaatkan karakteristik hantaran listrik yang pemanfaatannya banyak ditemukan pada aplikasi seperti semikonduktor, dielektrik, setengah logam (half-metallic) dan superkonduktor. 
+
+Material magnetik yang bertumpu pada rekayasa spin elektron dari material dan banyak diaplikasikan pada perangkat penyimpan data dan alat-alat kedokteran.
+
+Material optikal yang bekerja dengan memanipulasi cahaya melalui fenomena pemantulan, pembiasan, polarisasi, deteksi dan transformasi dari cahaya. Aplikasi terkini dapat ditemukan pada teknologi fotonik dan instrumentasi optik lanjut.  
+
+Secara lebih spesifik, ketiga jenis material ini dikembangkan di Teknik Fisika dengan fokus pada aplikasi sebagai material adaptif yaitu material yang berinteraksi dan menerima stimulus dari lingkungan untuk kemudian merespon secara khas untuk kemudian difungsikan untuk berbagai keperluan antara lain: sensor, pemanen energi seperti sel surya dan sel tunam (fuel-cell), katalis maju dan metamaterial optik dan akustik. Karakteristik keilmuan TF dengan jangkauan besaran fisis luas memungkinkan penggarapan bidang ini secara komprehensif. 
+
+Sifat-sifat fisis serta berbagai aplikasi tersebut diatas dapat diwujudkan dan dioptimasi melalui rekayasa material di skala atomik/nano. Dengan demikian, material fungsional maju merupakan wahana sekaligus pendorong pengembangan nanoteknologi. Bahkan, secara mutakhir nanoteknologi selalu diidentikkan dengan material fungsional maju. 
+
+Tantangan perkembangan kedepan dari ilmu kerekayasaan menuntut inovasi berbasis sains rekayasa yang semakin kompleks. Terobosan-terobosan baru diyakini dapat dihasilkan rekayasa di skala atomik/nano untuk meningkatkan fungsionalitas dari suatu material sebagai bagian krusial dari suatu sistem kerekayasaan. Dapatlah dikatakan bahwa Material Fungsional Maju merupakan platform dimana berbagai pengembagan kerekayasaan dibangun diatasnya. Hal ini menuntut hadirnya suatu kelompok keahlian dengan konten keilmuan beragam yang berfokus pada pengembangan ilmu rekayasa berbasis material fungsional maju. Inilah motivasi yang mendasari perlunya kehadiran Kelompok Keahlian Material Fungsional Maju.  
