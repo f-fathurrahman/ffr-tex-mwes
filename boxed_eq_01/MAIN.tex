@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[svgnames,hyperref]{xcolor}
+\usepackage{empheq}
+\usepackage[many]{tcolorbox}
+%\tcbuselibrary{skins}
+
+\tcbset{highlight math style={enhanced,
+  colframe=red!60!black,colback=yellow!50!white,arc=4pt,boxrule=1pt,
+  }}
+
+\newtcbox{\mybox}[1][]{nobeforeafter,math upper,tcbox raise base,
+  enhanced,frame hidden,boxrule=0pt,interior style={top color=green!10!white,
+  bottom color=green!10!white,middle color=green!50!yellow},
+  fuzzy halo=1pt with green,drop large lifted shadow,#1}
+
+\begin{document}
+
+\begin{empheq}[box=\tcbhighmath]{align}
+a&=b\\
+E&=mc^2 + \int_a^a x\, dx
+\end{empheq}
+
+\begin{empheq}[box={\tcbhighmath[colback=blue!20!white,arc=0pt,outer arc=0pt,toprule=0pt,drop large lifted shadow]}]{align}
+a&=b\\
+E&=mc^2 + \int_a^a x\, dx
+\end{empheq}
+
+\begin{empheq}[box=\mybox]{align}
+a&=b\\
+E&=mc^2 + \int_a^a x\, dx
+\end{empheq}
+
+\end{document}

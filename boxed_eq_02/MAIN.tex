@@ -1,0 +1,70 @@
+\documentclass[9pt]{beamer}
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{itemize item}[circle]
+\defbeamertemplate{footline}{sky blue}
+{
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=1em,rightskip=1em]{frametitle}%
+      \insertshortauthor\hfill\insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamertemplate{footline}[sky blue]
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{tcolorbox,mathtools,biolinum}
+\tcbuselibrary{skins,theorems}
+
+\definecolor{sblue}{HTML}{0049A9}
+\definecolor{scyan}{HTML}{CBEAFC}
+\definecolor{sred}{HTML}{B5595C}
+\definecolor{sgreen}{HTML}{609B57}
+\definecolor{spink}{HTML}{FFB0FF}
+\setbeamercolor{frametitle}{fg=sblue,bg=scyan}
+
+\newcommand\markit[1]{\textcolor{sblue}{#1}}
+\newtcolorbox{fancyeqbox}[1][]{
+  enhanced,drop fuzzy midday shadow,
+  boxrule=0pt,arc=0pt,boxsep=0pt,
+  left=.5em,right=.5em,top=1ex,bottom=1ex,
+  colback=white,#1
+}
+\setlength{\leftmargini}{0pt}
+\begin{document}
+
+\title{Controllo di Processo e dei Sistemi di Produzione -- A.a.\ 2009/09}
+\author{\textcopyright\ 2009 by A.\ Bemporad}
+
+\begin{frame}{Receding horizon philosophy}
+  \begin{columns}[totalwidth=\linewidth]
+    \column{.5\linewidth}
+    \begin{itemize}
+    \item \underline{At time $t$:} solve and \markit{optimal control}
+      problem over a finite future horizon of \markit{$N$} steps:
+      \begin{fancyeqbox}[ams align*,width=\linewidth+.7cm,enlarge left by=-.7cm]
+        \min_{u_t,\ldots,u_{t+N-1}}
+        &\left\{ \sum_{k=0}^{N-1} \| {\color{sred} y_{t+k} - r(t)} \|^ 2 + \right. \\
+        &\quad\left. \rho \| {\color{sred} u_{t+k} - u_r(t)} \|^2 \right\} \\
+        \text{s.t.}\quad
+        & {\color{sblue} x_{t+k+1} = f(x_{t+k},u_{t+k})} \\
+        & {\color{sblue} y_{t+k} = g(x_{t+k},u_{t+k})} \\
+        & {\color{sgreen} u_{\mathrm{min}} \leq u_{t+k} \leq u_{\mathrm{max}}} \\
+        & {\color{sgreen} y_{\mathrm{min}} \leq y_{t+k} \leq y_{\mathrm{max}}} \\
+        & x_{t} = x(t), k=0,\ldots,N-1
+      \end{fancyeqbox}
+    \end{itemize}
+
+    \column{.5\linewidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{example-image-golden-upright}
+  \end{columns}
+  \begin{itemize}
+  \item Only apply the firt optimal move \markit{$u^*(t)$}
+  \item \underline{At time $t+1$:} \markit{Get new measurements},
+    repeat the optimization. And so on\ldots
+  \end{itemize}
+  \begin{center}
+    \colorbox{spink}{Advantage of repeated on-line optimization: \textcolor{red}{FEEDBACK!}}
+  \end{center}
+\end{frame}
+\end{document}
