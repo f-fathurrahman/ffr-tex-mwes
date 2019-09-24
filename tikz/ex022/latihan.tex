@@ -1,0 +1,21 @@
+\documentclass{minimal}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\foreach \x  in {1.5,2,2.5,3,3.5,4}%
+    \shadedraw [ball color=red] (\x,1,-0.5) circle (0.25cm);
+
+\foreach \x  in {1.25,1.75,2.25,2.75,3.25,3.75,4.25}%
+    \shadedraw [ball color=red] (\x,1,0) circle (0.25cm);
+
+\foreach \x  in {1.25,1.75,2.25,2.75,3.25,3.75,4.25}%
+    \shadedraw [ball color=blue] (\x,1,0.5) circle (0.25cm);
+ 
+\end{tikzpicture}
+
+\end{document}
