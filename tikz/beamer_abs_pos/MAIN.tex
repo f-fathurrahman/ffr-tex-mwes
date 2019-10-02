@@ -3,11 +3,11 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
+\usepackage{amsmath}
+
 \begin{document}
 
 \begin{frame}[plain]
-
-%\tikz[remember picture, overlay] \node[anchor=center] at (current page.center) {\includegraphics[width=0.2\textwidth]{foo}};
 
 \begin{tikzpicture}[remember picture, overlay]
 \node[anchor=center] at ($(current page.center) - (5cm,1cm)$) {\includegraphics[width=0.3\textwidth]{foo}};
@@ -18,14 +18,58 @@
 \node[anchor=center] at ($(current page.center) + (2.5cm,1.5cm)$) {\includegraphics[width=0.3\textwidth]{foo}};
 \end{tikzpicture}
 
-%\begin{tikzpicture}[remember picture,overlay]
-  %\tikzset{shift={(current page.center)},yshift=0.0cm}
-  %\tikzset{yshift=1.5cm}
-  % the picture
-%  \node[anchor=center] at (current page.center) {\includegraphics[width=0.5\textwidth]{../ex013/smart-circle.pdf}};
-%\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Test positioning}
+
+\uncover<1-2>{
+\begin{tikzpicture}[remember picture, overlay]
+\node[anchor=center,draw] at ($(current page.center) + (-2.0cm,0.0cm)$) {
+\begin{minipage}{0.3\textwidth}
+{\footnotesize Test align
+\begin{align}
+A & = B + C \\
+  & = D + E + C
+\end{align}}\end{minipage}
+};
+\end{tikzpicture}
+}
+
+\uncover<2>{
+\begin{tikzpicture}[remember picture, overlay]
+\node[anchor=center,draw] at ($(current page.center) + (2.0cm,0.0cm)$) {
+\begin{minipage}{0.3\textwidth}
+{\footnotesize Test equation
+\begin{equation}
+\int f(x)\,\mathsf{d}x
+\end{equation}}\end{minipage}
+};
+\end{tikzpicture}
+}
+
+\uncover<3>{
+\begin{tikzpicture}[remember picture, overlay]
+\node[anchor=center,draw,color=blue!80] at ($(current page.center) + (2.0cm,-2.0cm)$) {%
+$\oint_{C} G(x)\,\mathsf{d}x$
+};
+\end{tikzpicture}
+}
+
+
+
+\uncover<4>{
+\begin{tikzpicture}[remember picture, overlay]
+\node[anchor=center,draw,color=red!80] at ($(current page.center) + (2.0cm,-2.0cm)$) {%
+$\oint_{C} G(x)\,\mathsf{d}x$
+};
+\end{tikzpicture}
+}
 
 
 \end{frame}
+
+
 
 \end{document}
