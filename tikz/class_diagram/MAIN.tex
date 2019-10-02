@@ -1,0 +1,48 @@
+\documentclass{minimal}
+
+\usepackage[a4paper,margin=1cm,landscape]{geometry}
+\usepackage{tikz}
+
+\usetikzlibrary{positioning,shapes,shadows,arrows}
+
+
+\begin{document}
+
+%
+% Styles
+%
+\tikzstyle{abstract}=[rectangle, draw=black, rounded corners]
+\tikzstyle{myarrow}=[->, >=open triangle 90, thick]
+\tikzstyle{line}=[-, thick]
+
+\begin{center}
+\begin{tikzpicture}[node distance=2cm]
+  
+  \node (Item) [abstract, rectangle split, rectangle split parts=2]
+  {
+    \textbf{ITEM}
+    \nodepart{second}name
+  };
+
+  \node (AuxNode01) [text width=4cm, below=of Item]{};
+
+  \node (Component) [abstract, rectangle split, rectangle split parts=2, left=of AuxNode01]
+  {
+    \textbf{COMPONENT}
+    \nodepart{second}nil
+  };
+
+  \node (System) [abstract, rectangle split, rectangle split parts=2, right=of AuxNode01]
+  {
+    \textbf{SYSTEM}
+    \nodepart{second}parts
+  };
+
+  \draw[myarrow] (Component.north) -- ++(0,0.8) -| (Item.south);
+  \draw[line] (Component.north) -- ++(0,0.8) -| (System.north);
+
+\end{tikzpicture}
+\end{center}
+
+\end{document}
+
