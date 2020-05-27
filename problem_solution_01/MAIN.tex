@@ -1,0 +1,39 @@
+% From: https://tex.stackexchange.com/questions/128337/problem-solution-template
+\documentclass{article}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:}\\%
+}
+
+\newcommand\ASolution{%
+  \stepcounter{solution}%
+  \textbf{Solution \thesolution:}\\%
+}
+\parindent 0in
+\parskip 1em
+\begin{document}
+\Problem This is the problem statement in multiple line. This is the
+problem statement in multiple line. This is the problem statement in
+multiple line.
+
+\TheSolution This is the solution of the problem. When there is only on
+solution, there is no need to numbering.
+
+\Problem This is another problem but two solution multiple line. This is
+another problem but two solution multiple line. This is another problem
+but two solution multiple line.
+
+\ASolution This is the first solution of the problem
+
+\ASolution This is the second solution.
+
+\end{document}
