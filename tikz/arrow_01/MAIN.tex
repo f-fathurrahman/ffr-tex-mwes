@@ -1,0 +1,23 @@
+\RequirePackage{luatex85} 
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+
+\begin{tikzpicture}
+\draw[->] (0,0) -- (1,0);
+\draw[>-Stealth] (0,0.3) -- (1,0.3);
+\end{tikzpicture}
+
+%\begin{tikzpicture}
+%\node [circle,draw] (A) {A};
+%\node [circle,draw] (B) [right=of A] {B};
+%\draw [draw = blue, thick, arrows={
+%Computer Modern Rightarrow [sep] - Latex[blue!50,length=8pt,bend,line width=0pt]
+%Stealth[length=8pt,open,bend,sep]}]
+%(A) edge [bend left=45] (B)
+%(B) edge [in=-110, out=-70,looseness=8] (B);
+%\end{tikzpicture}
+
+\end{document}
