@@ -1,0 +1,76 @@
+\documentclass[12pt,twoside,openright,a4paper]{memoir}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[many]{tcolorbox}
+\usepackage{amsthm}
+
+
+\newtcbtheorem[number within=chapter]{testiv}{Test}{outer arc=0pt,arc=0pt}{tha}
+
+
+ \newtcbtheorem[number within=chapter]{testv}{Test}{   
+   outer arc=0pt,
+   arc=0pt,
+   colback=white,
+   colframe=black,
+   colbacktitle=white,
+   titlerule=0pt,
+   fonttitle=\normalcolor\itshape}{thb}
+
+ \newmdtheoremenv{testi}{Test}[chapter]
+ \newmdtheoremenv[
+   backgroundcolor=gray!50
+ ]{testii}{Test}[chapter]
+ \theoremstyle{remark}
+ \newmdtheoremenv{testiii}{Test}[chapter]
+
+ \newcounter{FrameCnt} \setcounter{FrameCnt}{0}
+ \newcommand{\FrameTitle}[2]{%
+   \fboxrule=\FrameRule \fboxsep=\FrameSep
+   \fbox{\vbox{\nobreak \vskip -0.7\FrameSep
+   \rlap{\strut#1}\nobreak\nointerlineskip% left justified
+   \vskip 0.7\FrameSep
+   \hbox{#2}}}}
+
+ \newenvironment{framewithtitle}[2][\FrameFirst@Lab\ (cont.)]
+   {\refstepcounter{FrameCnt}%
+    \def\FrameFirst@Lab{\textbf{#2~\theFrameCnt}}%
+    \def\FrameCont@Lab{\textbf{#1}}%
+    \def\FrameCommand##1{\FrameTitle{\FrameFirst@Lab}{##1}}%
+    \def\FirstFrameCommand##1{\FrameTitle{\FrameFirst@Lab}{##1}}%
+    \def\MidFrameCommand##1{\FrameTitle{\FrameCont@Lab}{##1}}%
+    \def\LastFrameCommand##1{\FrameTitle{\FrameCont@Lab}{##1}}%
+    \MakeFramed{\advance\hsize-\width \FrameRestore}}
+  {\endMakeFramed}
+
+\begin{document}
+\chapter{Test chapter}
+
+Using your environmet:
+\begin{framewithtitle}{Test} 
+This is a test.
+\end{framewithtitle}
+
+\noindent Using \texttt{mdframed}:
+\begin{testi}
+This is a test.
+\end{testi}
+
+\begin{testii}
+This is a test.
+\end{testii}
+
+\begin{testiii}
+This is a test.
+\end{testiii}
+
+\noindent Using \texttt{tcolrbox}:
+\begin{testiv}{}{}
+This is a test.
+\end{testiv}
+
+\begin{testv}{}{}
+This is a test.
+\end{testv}
+
+
+\end{document}
