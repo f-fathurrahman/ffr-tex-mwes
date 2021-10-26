@@ -1,0 +1,12 @@
+\RequirePackage{luatex85} 
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+\draw[step=.5cm,help lines] (-1.4, -1.4) grid (1.4, 1.4);
+\draw (0,0) arc [start angle=0, end angle=315, x radius=1.75cm, y radius=1cm];
+\end{tikzpicture}
+
+\end{document}
