@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\pdfoutput=1 
+\usepackage{./notestex/tex/NotesTeX}
+
+\title{
+    \begin{center}{\Huge \textit{NotesTeX}}
+    \\{{\itshape An All-In-One Notes Package For Students}}\end{center}}
+    \author{Aditya Dhumuntarao\footnote{\href{https://geodesick.com/}{\textit{My Personal Website}}}}
+
+
+\affiliation{
+DAMTP, University of Cambridge\\
+Perimeter Institute of Theoretical Physics\\
+University of Minnesota
+}
+
+\emailAdd{adhumunt@gmail.com}
+
+\begin{document}
+\maketitle
+
+\flushbottom
+
+\newpage
+
+\pagestyle{fancynotes}
+
+%\part{Introduction}	
+
+\section{Bab 1}\label{sec:sec1}
+
+\begin{margintable}\vspace{.8in}\footnotesize
+  \begin{tabularx}{\marginparwidth}{|X}
+  Section~\ref{sec:motivation}. Motivation\\
+  Section~\ref{sec:reqpackages}. Required Packages\\
+  Section~\ref{sec:license}. Margins\\
+  \end{tabularx}
+\end{margintable}
+
+During my year as a Part III student at Cambridge, I realized that my theoretical physics professors, namely David Tong and David Skinner, would use the \texttt{jhep} format to typeset the notes for their classes. As the year went on, I started typesetting my personal notes during class and realized that the \texttt{jhep} format, while great for publications and lecture notes in general, was lacking a few small but useful features.
+
+
+\end{document}
