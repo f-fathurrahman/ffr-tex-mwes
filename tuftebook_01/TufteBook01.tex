@@ -1,0 +1,131 @@
+\RequirePackage{luatex85} % tuftebook not yet compatible with recent luatex
+
+\documentclass[twoside,bahasa]{tufte-book}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{luainputenc}
+
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+
+\usepackage{fontspec}
+\setmonofont{DejaVu Sans Mono}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usepackage{minted}
+\newminted{python}{breaklines,fontsize=\footnotesize}
+\newminted{text}{breaklines,fontsize=\footnotesize}
+\newcommand{\txtinline}[1]{\mintinline[fontsize=\footnotesize]{text}{#1}}
+\newcommand{\pyinline}[1]{\mintinline[fontsize=\footnotesize]{python}{#1}}
+
+% Using background color for minted environment
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+\definecolor{mintedbg}{rgb}{0.95,0.95,0.95}
+\BeforeBeginEnvironment{minted}{
+    \begin{mdframed}[backgroundcolor=mintedbg,%
+        topline=false,bottomline=false,%
+        leftline=false,rightline=false]
+}
+\AfterEndEnvironment{minted}{\end{mdframed}}
+
+
+\title{Judul}
+\author{\noindent{Fadjar Fathurrahman} \\[3mm]
+\noindent{Mariya Al Qibtiya Nasution} \\[3mm]}
+
+
+\usepackage{babel}
+
+
+\begin{document}
+\maketitle
+
+\chapter{Bab 1}
+
+\section{Sub1}
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+\begin{pythoncode}
+def myfunc1(x,y):
+    return (x + y) / (x - y)
+\end{pythoncode}
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+\begin{fullwidth}
+Paragraf \emph{full-width}. Paragraf \emph{full-width}. Paragraf \emph{full-width}.
+Paragraf \emph{full-width}. Paragraf \emph{full-width}. Paragraf \emph{full-width}.
+Paragraf \emph{full-width}. Paragraf \emph{full-width}. Paragraf \emph{full-width}.
+Paragraf \emph{full-width}. Paragraf \emph{full-width}. Paragraf \emph{full-width}.
+\end{fullwidth}
+
+
+\begin{fullwidth}
+\begin{pythoncode}
+a_very_very_very_very_long_expr = 1 + 2 + 3 + 4 + sin(x) + cos(x)
+\end{pythoncode}
+\end{fullwidth}
+
+\section{Sub2}
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf.~Contoh paragraf.
+Contoh paragraf. Contoh paragraf.~Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+\footnote{Catatan samping. Ini hanya untuk
+intermezzo semata. Tapi bisa menambahkan persamaan juga:
+\begin{equation}
+\alpha + \beta = \frac{\zeta}{\Omega} \int_{-\inf}^{+\inf} G(x)\,\mathrm{d}x
+\end{equation}
+}
+
+
+\section{Sub3}
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf.~Contoh paragraf.
+Contoh paragraf. Contoh paragraf.~Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf.~Contoh paragraf.
+Contoh paragraf. Contoh paragraf.~Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf. Contoh paragraf. Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+
+\chapter{Bab 2}
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf.~Contoh paragraf.
+Contoh paragraf. Contoh paragraf.~Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+\section{Sub 1}
+
+Contoh paragraf. Contoh paragraf. Contoh paragraf.~Contoh paragraf.
+Contoh paragraf. Contoh paragraf.~Contoh paragraf. Contoh paragraf.
+Contoh paragraf.
+
+\subsection{Subsub1}
+\end{document}
