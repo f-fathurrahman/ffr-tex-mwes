@@ -19,7 +19,8 @@
 \usepackage{styles/kaobiblio}
 \addbibresource{book-template.bib} % Bibliography file
 
-% Load mathematical packages for theorems and related environments. NOTE: choose only one between 'mdftheorems' and 'plaintheorems'.
+% Load mathematical packages for theorems and related environments.
+% NOTE: choose only one between 'mdftheorems' and 'plaintheorems'.
 \usepackage{styles/mdftheorems}
 %\usepackage{styles/plaintheorems}
 
@@ -28,13 +29,32 @@
 
 \graphicspath{{images/}{./}} % Paths in which to look for images
 
-\makeindex[columns=3, title=Alphabetical Index, intoc] % Make LaTeX produce the files required to compile the index
+% Make LaTeX produce the files required to compile the index
+\makeindex[columns=3, title=Alphabetical Index, intoc]
 
-\makeglossaries % Make LaTeX produce the files required to compile the glossary
+% Make LaTeX produce the files required to compile the glossary
+\makeglossaries
 
-\makenomenclature % Make LaTeX produce the files required to compile the nomenclature
+% Make LaTeX produce the files required to compile the nomenclature
+\makenomenclature
 
 %----------------------------------------------------------------------------------------
+
+\usepackage{fontspec}
+\setmonofont{JuliaMono-Regular}
+
+\usepackage{minted}
+
+\newminted{julia}{breaklines,fontsize=\footnotesize}
+\newminted{python}{breaklines,fontsize=\footnotesize}
+
+\newminted{bash}{breaklines,fontsize=\footnotesize}
+\newminted{text}{breaklines,fontsize=\footnotesize}
+
+\newcommand{\txtinline}[1]{\mintinline[breaklines,fontsize=\footnotesize]{text}{#1}}
+\newcommand{\jlinline}[1]{\mintinline[breaklines,fontsize=\footnotesize]{julia}{#1}}
+\newcommand{\pyinline}[1]{\mintinline[breaklines,fontsize=\footnotesize]{python}{#1}}
+
 
 \begin{document}
 
@@ -83,19 +103,26 @@
 
 \lowertitleback{
     \textbf{Disclaimer} \\
-    You can edit this page to suit your needs. For instance, here we have a no copyright statement, a colophon and some other information. This page is based on the corresponding page of Ken Arroyo Ohori's thesis, with minimal changes.
+    You can edit this page to suit your needs. For instance, here we have a no copyright statement,
+    a colophon and some other information. This page is based on the corresponding page of
+    Ken Arroyo Ohori's thesis, with minimal changes.
     
     \medskip
     
     \textbf{No copyright} \\
-    \cczero\ This book is released into the public domain using the CC0 code. To the extent possible under law, I waive all copyright and related or neighbouring rights to this work.
+    \cczero\ This book is released into the public domain using the CC0 code.
+    To the extent possible under law, I waive all copyright and related or
+    neighbouring rights to this work.
     
     To view a copy of the CC0 code, visit: \\\url{http://creativecommons.org/publicdomain/zero/1.0/}
     
     \medskip
     
     \textbf{Colophon} \\
-    This document was typeset with the help of \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and \href{https://www.latex-project.org/}{\LaTeX} using the \href{https://github.com/fmarotta/kaobook/}{kaobook} class.
+    This document was typeset with the help of
+    \href{https://sourceforge.net/projects/koma-script/}{\KOMAScript} and
+    \href{https://www.latex-project.org/}{\LaTeX} using the
+    \href{https://github.com/fmarotta/kaobook/}{kaobook} class.
     
     \medskip
     
@@ -109,7 +136,9 @@
 %----------------------------------------------------------------------------------------
 
 \dedication{
-    The harmony of the world is made manifest in Form and Number, and the heart and soul and all the poetry of Natural Philosophy are embodied in the concept of mathematical beauty.\\
+    The harmony of the world is made manifest in Form and Number, and the
+    heart and soul and all the poetry of Natural Philosophy are embodied in
+    the concept of mathematical beauty.\\
     \flushright -- D'Arcy Wentworth Thompson
 }
 
@@ -171,9 +200,77 @@
 
 \blindtext
 
+This is a text from ffr.
+
+Test code:
+\begin{juliacode}
+function myfunc()
+    println("Hello ffr")
+end
+\end{juliacode}
+
+\section{New section}
+This is math:
+\begin{equation}
+\rho(\mathbf{r}) = \sum_{i} f_{i} \psi_{i}^{*}(\mathbf{r}) \psi_{i}(\mathbf{r})
+\end{equation}
+
+Inline math: $\alpha + \beta + \gamma$.
+
+Inline code: \jlinline{struct}.
+
+\subsection{A subsection}
+
+\blindtext
+
+\section{Cannot}
+
+Test again:
+\begin{listing}
+\caption{A Julia listing}
+\begin{juliacode}
+long long long long long long long long long long long long long long long long long long
+\end{juliacode}
+\end{listing}
+
+Example listing:
+\begin{marginlisting}[-0.5cm]
+\caption{Caption for listing}
+\vspace{0.5cm}
+\begin{juliacode}
+println("Hello from efefer")
+\end{juliacode}
+\end{marginlisting}
+
+Test wide listing:
+\begin{listing*}[h!]
+\caption{A long Julia listing}
+\begin{juliacode}
+long long long long long long long long long long long long
+long long long long long long
+\end{juliacode}
+\end{listing*}
+
+
+\pagelayout{wide}
+
+Listing again
+\begin{listing}
+\caption{A Julia listing}
+\begin{juliacode}
+long long long long long long long long long long long long long long long long long long
+\end{juliacode}
+\end{listing}
+
+\pagelayout{margin}
+
+
+
 \pagelayout{wide} % No margins
 \addpart{Title of the Part}
 \pagelayout{margin} % Restore margins
+
+
 
 \chapter{Second Chapter}
 
